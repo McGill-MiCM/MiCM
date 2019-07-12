@@ -13,12 +13,23 @@ using namespace Rcpp;
 
 // [[Rcpp::depends(RcppArmadillo)]]
 // [[Rcpp::export]]
-Rcpp::List mat_inv(arma::mat K){
-  int N = K.n_rows;
-  arma::mat result(N, N);
+Rcpp::List mat_mal(arma::mat A, arma::mat B){
+  // Setups
+  int Col_a = A.n_cols;
+  int Row_a = A.n_rows;
+  int Row_b = B.n_rows;
+  int Col_b = B.n_cols;
+  // bool conformable;
+  arma::mat result(Row_a, Col_b);
   
-  result = inv(K);
-  return Rcpp::List::create(Rcpp::Named("MatrixInverse") = result);
+  // Task
+  // conformable = (Col_a == Row_b);
+  if (Col_a == Row_b) {
+    result = A * B;
+  } else {
+    stop("Error: non-conformable arguments\n");
+  }
+  return Rcpp::List::create(Rcpp::Named("MatrixMultiplication") = result);
 }
 
 // You can include R code blocks in C++ files processed with sourceCpp
@@ -27,5 +38,7 @@ Rcpp::List mat_inv(arma::mat K){
 //
 
 # /*** R
-# mat_inv(diag(10))
+# a <- matrix(1:6, ncol = 3); a
+# b <- matrix(-4:4, nrow = 3); b
+# mat_mal(a, b)
 # */
