@@ -1,2 +1,3 @@
 # MiCM
-Turorial20190813
+Turorial 2019-08-13
+Efficient coding and computing
