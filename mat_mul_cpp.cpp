@@ -42,5 +42,5 @@ Rcpp::List mat_mul(const arma::mat& A, const arma::mat& B){
 # /*** R
 # a <- matrix(rnorm(6), ncol = 3); a
 # b <- matrix(rnorm(9), nrow = 3); b
-# mat_mal(a, b)
+# mat_mul(a, b)
 # */
