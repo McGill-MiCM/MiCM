@@ -1,0 +1,14 @@
+1. Install mingw
+    https://www.youtube.com/watch?v=wGv2kGl8OV0
+    
+2. Install mingw-w64 for 64 bit windows (Omit Step 2 if 32 bit windows)
+    https://www.eclipse.org/4diac/documentation/html/installation/minGW.html
+    Architecture: x86-64
+    Threads: win32
+    Exception: seh
+
+    Install under C:\MinGW
+
+3. Follow link in 1
+    Edit the system environment variables
+    Advanced -> Environment Variables -> User variables for xxx -> Path -> Edit -> New -> C:\MinGW\mingw64\bin
