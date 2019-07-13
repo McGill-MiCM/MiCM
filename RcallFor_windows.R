@@ -47,3 +47,5 @@ A <- matrix(rnorm(ra*ca), nrow = ra)
 B <- matrix(rnorm(rb*cb), nrow = rb)
 
 A; B
+
+mmf(A, B)
