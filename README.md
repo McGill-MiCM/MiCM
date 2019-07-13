@@ -1,4 +1,4 @@
-# MiCM
-## Turorial 2019-08-13
-
-### Efficient coding and computing
+# MiCM  Workshop - McGill initiative in Computational Medicine
+## Efficient coding and computing
+## Yi Lian
+## 2019-08-13
