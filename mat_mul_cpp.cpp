@@ -13,7 +13,7 @@ using namespace Rcpp;
 
 // [[Rcpp::depends(RcppArmadillo)]]
 // [[Rcpp::export]]
-Rcpp::List mat_mal(const arma::mat& A, const arma::mat& B){
+Rcpp::List mat_mul(const arma::mat& A, const arma::mat& B){
   // Setups
   int Col_a = A.n_cols;
   int Row_a = A.n_rows;
