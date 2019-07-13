@@ -2,7 +2,7 @@
 # Set working directory
 # It is easier to also put your .f90 and .dll in this directory.
 
-dyn.load("mat_mul_for.dll")
+dyn.load("mm_for.dll")
 
 # Check whether the function is loaded
 is.loaded("mat_mul_for")
