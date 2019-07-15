@@ -8,4 +8,4 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 ### Workshop notes in 
 1. [Jupyter Notebook](Efficiency_LY.ipynb)
 2. [PDF](Efficiency_LY.pdf)
-3. [R code](Efficiency_LY.R)
+3. [R code](Efficiency_LY.r)
