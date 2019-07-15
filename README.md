@@ -12,5 +12,5 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 
 #### R codes
 1. [Workshop code](Efficiency_LY.r)
-2. [R call Fortran](RcallFor_windows.r)
+2. [R call Fortran](RcallFor_windows.R)
 4. [Teaching data](sample.csv)
