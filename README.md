@@ -10,7 +10,12 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 1. [HTML](Efficiency_LY.ipynb)
 2. [PDF](Efficiency_LY.pdf)
 
-#### R codes
+#### R codes and data
 1. [Workshop code](Efficiency_LY.r)
-2. [R call Fortran](RcallFor_windows.R)
-4. [Teaching data](sample.csv)
+2. [R call Fortran Windows](RcallFor_windows.R)
+3. [Teaching data](sample.csv)
+
+#### C++ and Fortran codes
+1. [Square: sqrt_cpp](sqrt_cpp.cpp)
+2. [Matrix Multiplication: mm_cpp](mm_cpp.cpp)
+3. [Matrix Multiplication: mm_for](ff_for.f90)
