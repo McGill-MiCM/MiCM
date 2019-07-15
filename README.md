@@ -5,7 +5,12 @@ Efficient coding and computing
 Department of Epidemiology, Biostatistics and Occupational Health, McGill University
 ## 2019-08-13
 
-### Workshop notes in 
+### Workshop Materials
+#### Notes
 1. [HTML](Efficiency_LY.ipynb)
 2. [PDF](Efficiency_LY.pdf)
-3. [R code](Efficiency_LY.r)
+
+#### R codes
+1. [Workshop code](Efficiency_LY.r)
+2. [R call Fortran](RcallFor_windows.r)
+4. [Teaching data](sample.csv)
