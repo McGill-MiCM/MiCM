@@ -28,4 +28,4 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 1. [R](https://www.r-project.org)
 2. [MacOS compilers](https://cran.r-project.org/bin/macosx/tools/)
 3. [Armadillo](http://arma.sourceforge.net)
-4. [Armadillo Linear Algebra](https://gitlab.com/conradsnicta/armadillo-code/blob/9.600.x/armadillo_joss_2016.pdf)
+  - [Armadillo Linear Algebra](https://gitlab.com/conradsnicta/armadillo-code/blob/9.600.x/armadillo_joss_2016.pdf)
