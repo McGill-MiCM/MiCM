@@ -22,3 +22,7 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 
 #### Miscellaneous
 1. [Fortran setup on Windows](Fortran_Setup_Win.txt)
+
+
+### Useful Links
+1. [R](https://www.r-project.org)
