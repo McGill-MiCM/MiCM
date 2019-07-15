@@ -26,3 +26,6 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 
 ### Useful Links
 1. [R](https://www.r-project.org)
+2. [MacOS compilers](https://cran.r-project.org/bin/macosx/tools/)
+3. [Armadillo](http://arma.sourceforge.net)
+4. [Armadillo Linear Algebra]()
