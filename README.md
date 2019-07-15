@@ -5,4 +5,7 @@ Efficient coding and computing
 Department of Epidemiology, Biostatistics and Occupational Health, McGill University
 ## 2019-08-13
 
-### Workshop notes in [Jupyter Notebook](Efficiency_LY.ipynb)
+### Workshop notes in 
+1. [Jupyter Notebook](Efficiency_LY.ipynb)
+2. [PDF](Efficiency_LY.pdf)
+3. [R code](Efficiency_LY.R)
