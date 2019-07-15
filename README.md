@@ -1,5 +1,5 @@
-# MiCM  Workshop - McGill initiative in Computational Medicine
-## R programming beyong the basics
+# MiCM - McGill initiative in Computational Medicine
+## Workshop: R programming beyong the basics
 Efficient coding and computing
 ## Yi Lian
 Department of Epidemiology, Biostatistics and Occupational Health, McGill University
@@ -19,3 +19,6 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 1. [Square: sqrt_cpp](sqrt_cpp.cpp)
 2. [Matrix Multiplication: mm_cpp](mm_cpp.cpp)
 3. [Matrix Multiplication: mm_for](mm_for.f90)
+
+#### Miscellaneous
+1. [Fortran setup on Windows](Fortran_Setup_Win.txt)
