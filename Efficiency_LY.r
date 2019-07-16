@@ -342,6 +342,7 @@ pl <- parLapplyLB(cl = cl, X = mat.list, fun = solve)
 stopCluster(cl)
 proc.time() - t
 
+# Two parallel calls within one cluster.
 t <- proc.time()
 cl <- makeCluster(3)
 pl_nb <- parLapply(cl = cl, X = mat.list, fun = solve)
