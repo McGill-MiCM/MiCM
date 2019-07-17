@@ -49,3 +49,5 @@ B <- matrix(rnorm(rb*cb), nrow = rb)
 A; B
 
 mmf(A, B)
+
+A %*% B
