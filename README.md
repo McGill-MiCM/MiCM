@@ -16,9 +16,9 @@ Department of Epidemiology, Biostatistics and Occupational Health, McGill Univer
 3. [Teaching data](sample.csv)
 
 #### C++ and Fortran codes
-1. [Square: sqrt_cpp](sqrt_cpp.cpp)
-2. [Matrix Multiplication: mm_cpp](mm_cpp.cpp)
-3. [Matrix Multiplication: mm_for](mm_for.f90)
+1. [Square root: sqrt_cpp.cpp](sqrt_cpp.cpp)
+2. [Matrix multiplication: mm_cpp.cpp](mm_cpp.cpp)
+3. [Matrix multiplication: mm_for.f90](mm_for.f90)
 
 #### Miscellaneous
 1. [Fortran setup on Windows](Fortran_Setup_Win.txt)
