@@ -1,6 +1,8 @@
 
+# double
 class(5); is.double(5)
 
+# integer
 class(5L); is.double(5L)
 
 object.size(rep(5, 1000))
@@ -11,13 +13,16 @@ options(digits = 22) # show more digits in output
 print(1/3)
 options(digits = 7) # default
 
-class(TRUE)
+# logical
+class(TRUE); class(F)
 
+# character
 class("TRUE")
 
 # Not important for this workshop
 fac <- as.factor(c(1, 5, 11, 3))
 fac
+
 class(fac)
 
 fac.ch <- as.factor(c("B", "a", "1", "ab", "b", "A"))
@@ -26,21 +31,25 @@ fac.ch
 # Scalar - a vector of length 1
 myscalar <- 5
 myscalar
+
 class(myscalar)
 
 # Vector
 myvector <- c(1, 1, 2, 3, 5, 8)
 myvector
+
 class(myvector)
 
 # Matrix - a 2d array
 mymatrix <- matrix(c(1, 1, 2, 3, 5, 8), nrow = 2, byrow = FALSE)
 mymatrix
+
 class(mymatrix)
 
 # Array - not important for this workshop
 myarray <- array(c(1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144), dim = c(2, 2, 3))
 print(myarray) # print() is not needed if run in R or Rstudio.
+
 class(myarray)
 
 # List - very important for the workshop
@@ -51,10 +60,19 @@ mylist <- list(Title = "Efficient Coding and Computing",
                Lunch_provided = FALSE,
                Feedbacks = c("Amazing!", "Great workshop!", "Yi is the best!", "Wow!")
 )
-print(mylist)
+print(mylist) # No need for print if running in R or Rstudio
+
 class(mylist)
 
-mylist$Feedbacks
+# Access data stored in lists
+mylist$Title
+
+# or
+mylist[[6]]
+
+# Further
+mylist$Duration[1]
+mylist[[6]][2]
 
 # Elements in lists can have different data types
 lapply(mylist, class) # We will talk about lapply() later
@@ -65,6 +83,7 @@ lapply(mylist, length)
 # Data frames - most commonly used for analyses
 head(mtcars)
 
+# Access a column (variable) in data frames
 mtcars$mpg
 
 # Let's try to invert a large matrix.
@@ -104,6 +123,7 @@ identical(x2, x3) # Check whether results are the same
 t; t1 - t0; t3 - t2
 # ?proc.time
 
+# microbenchmark runs the code multiple times and take a summary
 library(microbenchmark)
 result <- microbenchmark(sqrt(1:1000000),
                          for (i in 1:1000000) {x2[i] <- sqrt(i)},
@@ -129,41 +149,48 @@ summary(data)
 
 
 
+
+
 cts.var <- sapply(X = data, FUN = is.double) # We'll talk about sapply later.
 cts <- data[ , cts.var]
 head(cts)
-apply(X = cts, MARGIN = 2, FUN = mean, na.rm = TRUE)
 
 
 
 
 
-table(data[, c("Sex", "Smoke")])
 
-table(data$Sex, data$Smoke)
 
-aggregate(Wr.Hnd~Sex, data = data, FUN = sd)
 
-aggregate(data$Wr.Hnd, by = list(data$Sex), FUN = sd)
 
-by(data = data$Wr.Hnd, INDICES = list(data$Sex), FUN = sd)
 
-tapply(X = data$Wr.Hnd, INDEX = list(data$Sex), FUN = sd)
 
-aggregate(Wr.Hnd~Sex + Smoke, data = data, FUN = sd)
 
-aggregate(data$Wr.Hnd, by = list(data$Sex, data$Smoke), FUN = sd)
 
-aggregate(cbind(Wr.Hnd, NW.Hnd)~Sex + Smoke, data = data, FUN = sd)
 
-aggregate(Wr.Hnd~Sex + Smoke, data = data, FUN = print)
+
+
+
+
+
+
+
+# Return a list using tapply()
+
+
+
+
+
+
+
+
 
 
 
 
 
 adult <- 18
-data$Adult <- ifelse(data$Age >= adult, "Yes", "No")
+
 head(data)
 
 if (data$Age >= 18) {
@@ -174,45 +201,36 @@ if (data$Age >= 18) {
 head(data)
 
 # Delete Adult2
-data <- data[, -10]
+data <- subset(data, select=-c(Adult2))
 
 cut.points <- c(0, 16, 18, 20, 22, Inf)
-data$Hnd.group <- cut(data$Wr.Hnd, breaks = cut.points, right = TRUE)
-head(data)
+# labels as default
 
-data$Hnd.group <- cut(data$Wr.Hnd, breaks = cut.points, labels = FALSE, right = TRUE)
-head(data)
+# Set labels to false
 
-groups <- c("Curry", "Drake", "VanVleet", "Lin", "Leonard")
-data$Hnd.group <- cut(data$Wr.Hnd, breaks = cut.points, labels = groups, right = TRUE)
-head(data)
+# Customized labels
+label <- c("Curry", "Drake", "VanVleet", "Lin", "Leonard")
 
 
 
 cut.points <- c(0, 16, 18, 20, 22, Inf)
-grps <- cut(data$Wr.Hnd, breaks = cut.points, labels = groups, right = TRUE)
-Wr.Hnd.grp <- split(data$Wr.Hnd, f = grps)
-Wr.Hnd.grp
-class(Wr.Hnd.grp)
 
-la <- lapply(X = Wr.Hnd.grp, FUN = summary); la
-class(la)
+# lapply
 
-sa <- sapply(X = Wr.Hnd.grp, FUN = summary, simplify = TRUE); sa
-class(sa)
+# sapply
 # See what simplify does
 
-# ?vapply
+# vapply *
 # Safer than sapply(), and a little bit faster
 # because FUN.VALUE has to be specified that length and type should match
 # Any idea why it can be a little bit faster? Recall...
-va <- vapply(Wr.Hnd.grp, summary, FUN.VALUE = c("Min." = numeric(1),
-                                                "1st Qu." = numeric(1),
-                                                "Median" = numeric(1),
-                                                "lalalalala" = numeric(1),
-                                                "3rd Qu." = numeric(1),
-                                                "Max." = numeric(1)))
-va
+# va <- vapply(Wr.Hnd.grp, summary, FUN.VALUE = c("Min." = numeric(1),
+#                                                 "1st Qu." = numeric(1),
+#                                                 "Median" = numeric(1),
+#                                                 "lalalalala" = numeric(1),
+#                                                 "3rd Qu." = numeric(1),
+#                                                 "Max." = numeric(1)))
+# va
 
 # aggregate(Wr.Hnd~Smoke, data = data, FUN = ...)
 # tapply(X = data$Wr.Hnd, INDEX = list(data$Smoke), FUN = ...)
@@ -245,30 +263,12 @@ times2(5)
 9 %/% 2
 9 %% 2
 
-int.div <- function(a, b) {
-    int <- floor(a/b)
-    mod <- a - int * b
-    return(cat(a, "%%", b, ": integer =", int, "modulus =", mod, "\n"))
+int.div <- function(){
+    
 }
 
-int.div(b = 2, a = 9)
-
-# We can incorporate basically anything in functions, say a loop
-int.div.loop <- function(numerator, denominator) {
-    a <- numerator
-    b <- denominator
-    i <- 0
-    while (a >= b) {
-        a  <- a - b
-        i <- i + 1
-    }
-    return(list(integer = i, modulus = a))
-}
-result <- int.div.loop(3, numerator = 9)
-result
-
-class(result)
-result$modulus
+# class(result)
+# Recall: how do we access the modulus?
 
 # No need to worry about the details here.
 # Just want to show that functions do not always have to return() something.
@@ -349,6 +349,7 @@ pl_nb <- parLapply(cl = cl, X = mat.list, fun = solve)
 pl_lb <- parLapplyLB(cl = cl, X = mat.list, fun = solve)
 stopCluster(cl)
 proc.time() - t
+# This takes shorter than the sum of the previous two. Why?
 
 t <- proc.time()
 cl <- makeCluster(3)
@@ -419,7 +420,11 @@ B <- matrix(rnorm(rb*cb), nrow = rb)
 
 A; B
 
+# Load the executable .so file (MacOS) or .dll file (Windows)
 dyn.load("mm_for.so")
+
+# Check whether the "mat_mul_for" function is loaded into R
+is.loaded("mat_mul_for")
 
 result <- .Fortran("mat_mul_for",
                    A = as.double(A),
@@ -478,6 +483,10 @@ mmf(A, B)
 A %*% B
 
 # Something like this.
+9 %/% 2; 9%%2
+
+# Something like this.
+c(15, 14, 13, 12) %/% c(6, 5, 4, 3)
 c(15, 14, 13, 12) %% c(6, 5, 4, 3)
 
 # If you enter the right X and Y in your function, you should get the following result

@@ -13173,7 +13173,7 @@ div#notebook {
 </ul>
 </li>
 </ol>
-<h5 id="Important-note!-There-are-MANY-advanced-and-powerful-packages-that-do-different-things.-There-are-too-many-and-they-are-too-diverse-to-be-covered-in-this-tutorial.">Important note! There are MANY advanced and powerful packages that do different things. There are too many and they are too diverse to be covered in this tutorial.<a class="anchor-link" href="#Important-note!-There-are-MANY-advanced-and-powerful-packages-that-do-different-things.-There-are-too-many-and-they-are-too-diverse-to-be-covered-in-this-tutorial.">&#182;</a></h5><h5 id="Here-is-a-list-of-some-awesome-packages-for-data-manipulation.">Here is a list of some awesome packages for data manipulation.<a class="anchor-link" href="#Here-is-a-list-of-some-awesome-packages-for-data-manipulation.">&#182;</a></h5><p><a href="https://awesome-r.com/#awesome-r-data-manipulation">https://awesome-r.com/#awesome-r-data-manipulation</a></p>
+<h5 id="Important-note!-There-are-MANY-advanced-and-powerful-packages-that-do-different-things.-There-are-too-many-and-they-are-too-diverse-to-be-covered-in-this-workshop.">Important note! There are MANY advanced and powerful packages that do different things. There are too many and they are too diverse to be covered in this workshop.<a class="anchor-link" href="#Important-note!-There-are-MANY-advanced-and-powerful-packages-that-do-different-things.-There-are-too-many-and-they-are-too-diverse-to-be-covered-in-this-workshop.">&#182;</a></h5><p><strong><em>Here is a list of some awesome packages.</em></strong> <a href="https://awesome-r.com/">https://awesome-r.com/</a></p>
 
 </div>
 </div>
@@ -13184,6 +13184,7 @@ div#notebook {
 <p><a id='1'></a></p>
 <h2 id="1.-An-overview-of-efficiency">1. <a href="#0">An overview of efficiency</a><a class="anchor-link" href="#1.-An-overview-of-efficiency">&#182;</a></h2><p><strong>Why?</strong></p>
 <ul>
+<li>Clean and tidy codes make everything easier - edit, debug, reproduce, etc..</li>
 <li>Era of big data/machine learning/AI</li>
 <li>Large sample size and/or high dimension</li>
 </ul>
@@ -13202,7 +13203,7 @@ div#notebook {
 </li>
 <li>Setups take time (overhead)</li>
 <li>Programming languages are different and are fast/slow at different things</li>
-<li>Efficient coding $\neq$ efficient computing<ul>
+<li><strong>Efficient coding $\neq$ efficient computing</strong><ul>
 <li>Shorter codes do not necessarily lead to shorter run time.</li>
 </ul>
 </li>
@@ -13229,7 +13230,7 @@ div#notebook {
 </ul>
 </li>
 </ul>
-
+<h5 id="Detailed-illustration-in-1.3-Time-your-program-in-R.">Detailed illustration in 1.3 Time your program in R.<a class="anchor-link" href="#Detailed-illustration-in-1.3-Time-your-program-in-R.">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -13253,7 +13254,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="m">5</span><span class="p">);</span> <span class="nf">is.double</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># double</span>
+<span class="nf">class</span><span class="p">(</span><span class="m">5</span><span class="p">);</span> <span class="nf">is.double</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13297,7 +13299,8 @@ TRUE
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="m">5L</span><span class="p">);</span> <span class="nf">is.double</span><span class="p">(</span><span class="m">5L</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># integer</span>
+<span class="nf">class</span><span class="p">(</span><span class="m">5L</span><span class="p">);</span> <span class="nf">is.double</span><span class="p">(</span><span class="m">5L</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13422,7 +13425,8 @@ FALSE
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># logical</span>
+<span class="nf">class</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">);</span> <span class="nf">class</span><span class="p">(</span><span class="bp">F</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13445,6 +13449,18 @@ FALSE
 
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+'logical'
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13454,7 +13470,8 @@ FALSE
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="s">&quot;TRUE&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># character</span>
+<span class="nf">class</span><span class="p">(</span><span class="s">&quot;TRUE&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13489,10 +13506,6 @@ FALSE
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Not important for this workshop</span>
 <span class="n">fac</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
 <span class="n">fac</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">fac</span><span class="p">)</span>
-
-<span class="n">fac.ch</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="s">&quot;ab&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;A&quot;</span><span class="p">))</span>
-<span class="n">fac.ch</span>
 </pre></div>
 
     </div>
@@ -13532,6 +13545,26 @@ FALSE
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">fac</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13543,6 +13576,27 @@ FALSE
 </div>
 
 </div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fac.ch</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="s">&quot;ab&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;A&quot;</span><span class="p">))</span>
+<span class="n">fac.ch</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
 
 <div class="output_area">
 
@@ -13598,13 +13652,12 @@ FALSE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Scalar - a vector of length 1</span>
 <span class="n">myscalar</span> <span class="o">&lt;-</span> <span class="m">5</span>
 <span class="n">myscalar</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">myscalar</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13627,6 +13680,26 @@ FALSE
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">myscalar</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13645,13 +13718,12 @@ FALSE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Vector</span>
 <span class="n">myvector</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
 <span class="n">myvector</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">myvector</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13682,6 +13754,26 @@ FALSE
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">myvector</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13700,13 +13792,12 @@ FALSE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Matrix - a 2d array</span>
 <span class="n">mymatrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 <span class="n">mymatrix</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13736,6 +13827,26 @@ FALSE
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13754,13 +13865,12 @@ FALSE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Array - not important for this workshop</span>
 <span class="n">myarray</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">89</span><span class="p">,</span> <span class="m">144</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">myarray</span><span class="p">)</span> <span class="c1"># print() is not needed if run in R or Rstudio.</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">myarray</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13799,6 +13909,26 @@ FALSE
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">myarray</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13817,7 +13947,7 @@ FALSE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># List - very important for the workshop</span>
@@ -13828,8 +13958,7 @@ FALSE
                <span class="n">Lunch_provided</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
                <span class="n">Feedbacks</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Amazing!&quot;</span><span class="p">,</span> <span class="s">&quot;Great workshop!&quot;</span><span class="p">,</span> <span class="s">&quot;Yi is the best!&quot;</span><span class="p">,</span> <span class="s">&quot;Wow!&quot;</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span> <span class="c1"># No need for print if running in R or Rstudio</span>
 </pre></div>
 
     </div>
@@ -13869,6 +13998,26 @@ $Feedbacks
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     <div class="prompt"></div>
@@ -13887,10 +14036,44 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">mylist</span><span class="o">$</span><span class="n">Feedbacks</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Access data stored in lists</span>
+<span class="n">mylist</span><span class="o">$</span><span class="n">Title</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+'Efficient Coding and Computing'
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># or</span>
+<span class="n">mylist[[6]]</span>
 </pre></div>
 
     </div>
@@ -13925,7 +14108,53 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Further</span>
+<span class="n">mylist</span><span class="o">$</span><span class="n">Duration[1]</span>
+<span class="n">mylist[[6]][2]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+3
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+'Great workshop!'
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Elements in lists can have different data types</span>
@@ -13972,7 +14201,7 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Elements in list can have different lengths</span>
@@ -14019,7 +14248,7 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Data frames - most commonly used for analyses</span>
@@ -14067,10 +14296,11 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Access a column (variable) in data frames</span>
+<span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span>
 </pre></div>
 
     </div>
@@ -14140,7 +14370,7 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Let&#39;s try to invert a large matrix.</span>
@@ -14162,7 +14392,7 @@ $Feedbacks
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># optim() in R calls C programs, run optim to see source code.</span>
@@ -14180,7 +14410,9 @@ $Feedbacks
 <h3 id="1.3-Time-your-program-in-R">1.3 Time your program in R<a class="anchor-link" href="#1.3-Time-your-program-in-R">&#182;</a></h3>
 <pre><code>    - proc.time(), system.time()
     - microbenchmark()
+
 </code></pre>
+<p><strong><em>Illustrations of R rules for efficiency.</em></strong></p>
 <p><strong>Example</strong>
 Calculate the square root of 1 to 1,000,000 using three different operations:</p>
 <h4 id="1.-Vectorized">1. Vectorized<a class="anchor-link" href="#1.-Vectorized">&#182;</a></h4>
@@ -14189,7 +14421,7 @@ Calculate the square root of 1 to 1,000,000 using three different operations:</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Vectorized operation</span>
@@ -14238,7 +14470,7 @@ Calculate the square root of 1 to 1,000,000 using three different operations:</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># We can do worse</span>
@@ -14286,7 +14518,7 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Even worse</span>
@@ -14327,7 +14559,7 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># As we can see, R is not very good with loops.</span>
@@ -14352,7 +14584,7 @@ TRUE
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.006   0.005   0.012 </pre>
+  0.006   0.005   0.011 </pre>
 </div>
 
 </div>
@@ -14366,7 +14598,7 @@ TRUE
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.070   0.005   0.081 </pre>
+  0.071   0.004   0.076 </pre>
 </div>
 
 </div>
@@ -14380,7 +14612,7 @@ TRUE
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.305   0.077   0.385 </pre>
+  0.294   0.072   0.369 </pre>
 </div>
 
 </div>
@@ -14398,7 +14630,6 @@ TRUE
 
 <pre><code> x1 &lt;- sqrt(1:1000000)
 
- - Yum! I see a vector. I just need to do this sqrt thing to every single element.
  - sqrt 1, sqrt 2, ..., sqrt 1e6
  - Save everything in x1 and put it in memory.</code></pre>
 </li>
@@ -14407,44 +14638,50 @@ TRUE
 <pre><code> x2 &lt;- rep(NA, 1000000)
  for (i in 1:1000000) { x2[i] &lt;- sqrt(i) }
 
- - For some reason, I need to make a huge vector x2 and set all elements to NA.
+ - Make a vector x2 of length 1e6 and set all elements to NA.
  - Put it in memory.
- - Oh no, a loop. Let me get ready for it.
+ - Setup for loop.
  - 1st step
      - Find x2 in memory
      - Change the 1st element to sqrt 1
-     - Put new x2 in memory
+     - Put new x2 back in memory, delete old x2
  - 2nd step
      - Find x2 in memory
      - Change the 2nd element to sqrt 2
-     - Put new x2 in memory
+     - Put new x2 back in memory, delete old x2
  - ...
  - - 1e6th step
      - Find x2 in memory
      - Change the 1e6th element to sqrt 1e6
-     - Put new x2 in memory</code></pre>
+     - Put new x2 back in memory, delete old x2</code></pre>
 </li>
 <li><p>For loop without memory pre-allocation</p>
 
 <pre><code> x3 &lt;- NULL
  for (i in 1:1000000) { x3[i] &lt;- sqrt(i) }
 
- - For some reason, I need to make an empty object x3 (NULL has length 0)
+ - Make an empty object x3 (NULL has length 0)
  - Put it in memory
- - Oh no, a loop. Let me get ready for it.
+ - Setup for loop.
  - 1st step
      - Find x3 in memory
      - Change the 1st element to .., wait x3 has length 0
      - Make a new x3 that has length 1
      - Change the 1st element to sqrt 1
-     - Put new x3 in memory, delete old x3
+     - Put new x3 back in memory.., wait
+         The memory allocated for old x3 is not enough for new x3
+     - Find some new space in memory for new x3
+     - Put new x3 back in memory, delete old x3
  - 2nd step
      - Find x3 in memory
      - Change the 2nd element to .., wait x3 has length 1
      - Make a new x3 that has length 2
      - Copy the old x3 and paste as the first 1 element of new x3
      - Change the 2nd element to sqrt 2
-     - Put new x3 in memory, delete old x3
+     - Put new x3 back in memory.., wait
+         The memory allocated for old x3 is not enough for new x3
+     - Find some new space in memory for new x3
+     - Put new x3 back in memory, delete old x3
  - ...
  - 1e6th step
      - Find x3 in memory
@@ -14452,7 +14689,10 @@ TRUE
      - Make a new x3 that has length 1e6
      - Copy the old x3 and paste as the first 999999 elements of new x3
      - Change the 1e6th element to sqrt 1e6
-     - Put new x3 in memory, delete old x3</code></pre>
+     - Put new x3 back in memory.., wait
+         The memory allocated for old x3 is not enough for new x3
+     - Find some new space in memory for new x3..
+     - Put new x3 back in memory, delete old x3</code></pre>
 </li>
 </ol>
 <p><strong><em>As a result, there will not be a lot of loops in this workshop.</em></strong></p>
@@ -14483,10 +14723,11 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">microbenchmark</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># microbenchmark runs the code multiple times and take a summary</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">microbenchmark</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">1000000</span><span class="p">),</span>
                          <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000000</span><span class="p">)</span> <span class="p">{</span><span class="n">x2[i]</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">)},</span>
                          <span class="n">unit</span> <span class="o">=</span> <span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">times</span> <span class="o">=</span> <span class="m">20</span>
@@ -14517,8 +14758,8 @@ TRUE
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>sqrt(1:1e+06)                              </td><td>0.003786558</td><td>0.004093935</td><td>0.007357364</td><td>0.004943512</td><td>0.01038728</td><td>0.0158044</td><td>20</td></tr>
-	<tr><td><span style=white-space:pre-wrap>for (i in 1:1e+06) {     x2[i] &lt;- sqrt(i) }</span></td><td>0.059365634</td><td>0.059877538</td><td>0.069489656</td><td>0.061601923</td><td>0.06540247</td><td>0.1381939</td><td>20</td></tr>
+	<tr><td>sqrt(1:1e+06)                              </td><td>0.003910112</td><td>0.004903612</td><td>0.007846455</td><td>0.005464531</td><td>0.01071618</td><td>0.01427238</td><td>20</td></tr>
+	<tr><td><span style=white-space:pre-wrap>for (i in 1:1e+06) {     x2[i] &lt;- sqrt(i) }</span></td><td>0.059107341</td><td>0.059319024</td><td>0.069171916</td><td>0.059795169</td><td>0.07439276</td><td>0.11318731</td><td>20</td></tr>
 </tbody>
 </table>
 
@@ -14530,9 +14771,18 @@ TRUE
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example</strong>
+Calculate the square root using sqrt( ) vs. our own implementation.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Use well-developped R functions</span>
@@ -14566,8 +14816,8 @@ TRUE
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>sqrt(500)</td><td> 80</td><td> 89</td><td>111.432</td><td> 93</td><td> 99</td><td>8610</td><td>1000</td></tr>
-	<tr><td>500^0.5  </td><td>151</td><td>165</td><td>198.169</td><td>172</td><td>177</td><td>8224</td><td>1000</td></tr>
+	<tr><td>sqrt(500)</td><td>118</td><td>152</td><td>176.687</td><td>168</td><td>185</td><td> 1583</td><td>1000</td></tr>
+	<tr><td>500^0.5  </td><td>209</td><td>263</td><td>309.043</td><td>291</td><td>319</td><td>11331</td><td>1000</td></tr>
 </tbody>
 </table>
 
@@ -14597,7 +14847,7 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/ly129/MiCM/master/sample.csv&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
@@ -14649,7 +14899,7 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -14737,6 +14987,19 @@ TRUE
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14748,13 +15011,12 @@ TRUE
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">cts.var</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">is.double</span><span class="p">)</span> <span class="c1"># We&#39;ll talk about sapply later.</span>
 <span class="n">cts</span> <span class="o">&lt;-</span> <span class="n">data[</span> <span class="p">,</span> <span class="n">cts.var]</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">cts</span><span class="p">)</span>
-<span class="nf">apply</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">cts</span><span class="p">,</span> <span class="n">MARGIN</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">mean</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14792,28 +15054,19 @@ TRUE
 
 </div>
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<dl class=dl-horizontal>
-	<dt>Wr.Hnd</dt>
-		<dd>18.43</dd>
-	<dt>NW.Hnd</dt>
-		<dd>18.391</dd>
-	<dt>Height</dt>
-		<dd>171.784597701149</dd>
-	<dt>Age</dt>
-		<dd>20.96503</dd>
-</dl>
-
+</div>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
 
+    </div>
 </div>
 </div>
 
@@ -14821,7 +15074,7 @@ TRUE
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="b1.-Calculate-the-count/proportion-of-males-and-females">b1. Calculate the count/proportion of males and females<a class="anchor-link" href="#b1.-Calculate-the-count/proportion-of-males-and-females">&#182;</a></h4>
+<h4 id="b1.-Calculate-the-count/proportion-of-females-and-males">b1. Calculate the count/proportion of females and males<a class="anchor-link" href="#b1.-Calculate-the-count/proportion-of-females-and-males">&#182;</a></h4>
 <pre><code>table(...,
   exclude = if (useNA == "no") c(NA, NaN),
   useNA = c("no", "ifany", "always"),
@@ -14831,6 +15084,19 @@ prop.table()</code></pre>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -14874,72 +15140,26 @@ prop.table()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">data[</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Sex&quot;</span><span class="p">,</span> <span class="s">&quot;Smoke&quot;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>        Smoke
-Sex      Heavy Never Occas Regul
-  Female     3    40     3     1
-  Male       3    39     2     9</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">Smoke</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>        
-         Heavy Never Occas Regul
-  Female     3    40     3     1
-  Male       3    39     2     9</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14948,166 +15168,74 @@ Sex      Heavy Never Occas Regul
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="c1.-Calculate-the-standare-deviation-of-writing-hand-span-of-females">c1. Calculate the standare deviation of writing hand span of females<a class="anchor-link" href="#c1.-Calculate-the-standare-deviation-of-writing-hand-span-of-females">&#182;</a></h4>
+<pre><code>    aggregate()
+    tapply()
+    by()</code></pre>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">Wr.Hnd</span><span class="o">~</span><span class="n">Sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 2 × 2</caption>
-<thead>
-	<tr><th scope=col>Sex</th><th scope=col>Wr.Hnd</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>1.519908</td></tr>
-	<tr><td>Male  </td><td>1.712066</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 2 × 2</caption>
-<thead>
-	<tr><th scope=col>Group.1</th><th scope=col>x</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>1.519908</td></tr>
-	<tr><td>Male  </td><td>1.712066</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">by</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">INDICES</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>: Female
-[1] 1.519908
------------------------------------------------------------- 
-: Male
-[1] 1.712066</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">tapply</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">INDEX</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Sex</span><span class="p">),</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<dl class=dl-horizontal>
-	<dt>Female</dt>
-		<dd>1.51990797715501</dd>
-	<dt>Male</dt>
-		<dd>1.71206552443005</dd>
-</dl>
-
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Return a list using tapply()</span>
+</pre></div>
 
-</div>
-
+    </div>
 </div>
 </div>
 
@@ -15115,7 +15243,7 @@ Sex      Heavy Never Occas Regul
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="aggregate(-),-by(-)-and-tapply(-)-are-all-connected.">aggregate( ), by( ) and tapply( ) are all connected.<a class="anchor-link" href="#aggregate(-),-by(-)-and-tapply(-)-are-all-connected.">&#182;</a></h5>
+<h5 id="aggregate(-),-by(-)-and-tapply(-)-are-all-connected.-They-give-different-types-of-output.">aggregate( ), by( ) and tapply( ) are all connected. They give different types of output.<a class="anchor-link" href="#aggregate(-),-by(-)-and-tapply(-)-are-all-connected.-They-give-different-types-of-output.">&#182;</a></h5>
 </div>
 </div>
 </div>
@@ -15128,98 +15256,26 @@ Sex      Heavy Never Occas Regul
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">Wr.Hnd</span><span class="o">~</span><span class="n">Sex</span> <span class="o">+</span> <span class="n">Smoke</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 8 × 3</caption>
-<thead>
-	<tr><th scope=col>Sex</th><th scope=col>Smoke</th><th scope=col>Wr.Hnd</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>Heavy</td><td>0.2309401</td></tr>
-	<tr><td>Male  </td><td>Heavy</td><td>4.8569538</td></tr>
-	<tr><td>Female</td><td>Never</td><td>1.5762663</td></tr>
-	<tr><td>Male  </td><td>Never</td><td>1.3857770</td></tr>
-	<tr><td>Female</td><td>Occas</td><td>1.9000000</td></tr>
-	<tr><td>Male  </td><td>Occas</td><td>2.2627417</td></tr>
-	<tr><td>Female</td><td>Regul</td><td>       NA</td></tr>
-	<tr><td>Male  </td><td>Regul</td><td>1.6537835</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Sex</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">Smoke</span><span class="p">),</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 8 × 3</caption>
-<thead>
-	<tr><th scope=col>Group.1</th><th scope=col>Group.2</th><th scope=col>x</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>Heavy</td><td>0.2309401</td></tr>
-	<tr><td>Male  </td><td>Heavy</td><td>4.8569538</td></tr>
-	<tr><td>Female</td><td>Never</td><td>1.5762663</td></tr>
-	<tr><td>Male  </td><td>Never</td><td>1.3857770</td></tr>
-	<tr><td>Female</td><td>Occas</td><td>1.9000000</td></tr>
-	<tr><td>Male  </td><td>Occas</td><td>2.2627417</td></tr>
-	<tr><td>Female</td><td>Regul</td><td>       NA</td></tr>
-	<tr><td>Male  </td><td>Regul</td><td>1.6537835</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15233,49 +15289,13 @@ Sex      Heavy Never Occas Regul
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="nf">cbind</span><span class="p">(</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">NW.Hnd</span><span class="p">)</span><span class="o">~</span><span class="n">Sex</span> <span class="o">+</span> <span class="n">Smoke</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">sd</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 8 × 4</caption>
-<thead>
-	<tr><th scope=col>Sex</th><th scope=col>Smoke</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>Heavy</td><td>0.2309401</td><td>0.2886751</td></tr>
-	<tr><td>Male  </td><td>Heavy</td><td>4.8569538</td><td>3.9828800</td></tr>
-	<tr><td>Female</td><td>Never</td><td>1.5762663</td><td>1.6625899</td></tr>
-	<tr><td>Male  </td><td>Never</td><td>1.3857770</td><td>1.3760875</td></tr>
-	<tr><td>Female</td><td>Occas</td><td>1.9000000</td><td>1.3796135</td></tr>
-	<tr><td>Male  </td><td>Occas</td><td>2.2627417</td><td>1.0606602</td></tr>
-	<tr><td>Female</td><td>Regul</td><td>       NA</td><td>       NA</td></tr>
-	<tr><td>Male  </td><td>Regul</td><td>1.6537835</td><td>1.3991069</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15284,76 +15304,20 @@ Sex      Heavy Never Occas Regul
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="Let's-try-to-figure-out-what-aggregate(-)-is-doing">Let's try to figure out what aggregate( ) is doing<a class="anchor-link" href="#Let's-try-to-figure-out-what-aggregate(-)-is-doing">&#182;</a></h5>
+<pre><code>    print()</code></pre>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">Wr.Hnd</span><span class="o">~</span><span class="n">Sex</span> <span class="o">+</span> <span class="n">Smoke</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">print</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1] 17.5 17.5 17.1
-[1] 14.0 23.2 21.3
- [1] 15.9 13.0 18.5 17.5 18.6 16.0 13.0 19.6 17.5 19.5 19.5 16.4 17.2 19.4 17.0
-[16] 18.0 16.9 16.5 17.0 17.6 16.5 18.8 17.7 15.5 18.0 17.6 19.5 19.0 17.5 19.0
-[31] 18.5 15.0 16.0 18.5 17.5 18.0 19.0 17.5 17.6 18.7
- [1] 21.4 19.5 19.3 18.5 19.8 22.0 20.0 18.0 21.0 18.9 18.1 16.0 18.8 18.5 17.8
-[16] 21.0 18.5 19.1 21.0 19.0 21.5 20.8 18.9 18.5 19.2 17.7 17.5 18.0 18.5 19.2
-[31] 21.5 17.5 19.5 17.0 18.2 18.0 19.5 19.5 20.5
-[1] 19.1 15.4 16.5
-[1] 22.2 19.0
-[1] 16.3
-[1] 18.5 19.5 19.7 18.0 17.0 22.5 20.5 20.0 21.0
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 8 × 3</caption>
-<thead>
-	<tr><th scope=col>Sex</th><th scope=col>Smoke</th><th scope=col>Wr.Hnd</th></tr>
-	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;list&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Female</td><td>Heavy</td><td>17.5, 17.5, 17.1</td></tr>
-	<tr><td>Male  </td><td>Heavy</td><td>14.0, 23.2, 21.3</td></tr>
-	<tr><td>Female</td><td>Never</td><td>15.9, 13.0, 18.5, 17.5, 18.6, 16.0, 13.0, 19.6, 17.5, 19.5, 19.5, 16.4, 17.2, 19.4, 17.0, 18.0, 16.9, 16.5, 17.0, 17.6, 16.5, 18.8, 17.7, 15.5, 18.0, 17.6, 19.5, 19.0, 17.5, 19.0, 18.5, 15.0, 16.0, 18.5, 17.5, 18.0, 19.0, 17.5, 17.6, 18.7</td></tr>
-	<tr><td>Male  </td><td>Never</td><td>21.4, 19.5, 19.3, 18.5, 19.8, 22.0, 20.0, 18.0, 21.0, 18.9, 18.1, 16.0, 18.8, 18.5, 17.8, 21.0, 18.5, 19.1, 21.0, 19.0, 21.5, 20.8, 18.9, 18.5, 19.2, 17.7, 17.5, 18.0, 18.5, 19.2, 21.5, 17.5, 19.5, 17.0, 18.2, 18.0, 19.5, 19.5, 20.5</td></tr>
-	<tr><td>Female</td><td>Occas</td><td>19.1, 15.4, 16.5</td></tr>
-	<tr><td>Male  </td><td>Occas</td><td>22.2, 19.0</td></tr>
-	<tr><td>Female</td><td>Regul</td><td>16.3</td></tr>
-	<tr><td>Male  </td><td>Regul</td><td>18.5, 19.5, 19.7, 18.0, 17.0, 22.5, 20.5, 20.0, 21.0</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15407,7 +15371,7 @@ Sex      Heavy Never Occas Regul
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="d1.-Categorize-'Age'---make-a-new-binary-variable-'Teenage'">d1. Categorize 'Age' - make a new binary variable 'Teenage'<a class="anchor-link" href="#d1.-Categorize-'Age'---make-a-new-binary-variable-'Teenage'">&#182;</a></h4>
+<h4 id="d1.-Categorize-'Age'---make-a-new-binary-variable-'Adult'">d1. Categorize 'Age' - make a new binary variable 'Adult'<a class="anchor-link" href="#d1.-Categorize-'Age'---make-a-new-binary-variable-'Adult'">&#182;</a></h4>
 <pre><code>ifelse(test, yes, no)</code></pre>
 
 </div>
@@ -15419,7 +15383,7 @@ Sex      Heavy Never Occas Regul
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">adult</span> <span class="o">&lt;-</span> <span class="m">18</span>
-<span class="n">data</span><span class="o">$</span><span class="n">Adult</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Age</span> <span class="o">&gt;=</span> <span class="n">adult</span><span class="p">,</span> <span class="s">&quot;Yes&quot;</span><span class="p">,</span> <span class="s">&quot;No&quot;</span><span class="p">)</span>
+
 <span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
@@ -15439,18 +15403,18 @@ Sex      Heavy Never Occas Regul
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<caption>A data.frame: 6 × 9</caption>
+<caption>A data.frame: 6 × 8</caption>
 <thead>
-	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult</th></tr>
-	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td></tr>
-	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td></tr>
-	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td></tr>
-	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>No </td></tr>
-	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td></tr>
-	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td></tr>
+	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td></tr>
+	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td></tr>
+	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td></tr>
+	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td></tr>
+	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td></tr>
+	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td></tr>
 </tbody>
 </table>
 
@@ -15509,18 +15473,18 @@ Sex      Heavy Never Occas Regul
 
 <div class="output_html rendered_html output_subarea ">
 <table>
-<caption>A data.frame: 6 × 10</caption>
+<caption>A data.frame: 6 × 9</caption>
 <thead>
-	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult</th><th scope=col>Adult2</th></tr>
-	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult2</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td><td>Yes</td></tr>
-	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td><td>Yes</td></tr>
-	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td><td>Yes</td></tr>
-	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>No </td><td>Yes</td></tr>
-	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td><td>Yes</td></tr>
-	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td><td>Yes</td></tr>
+	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td></tr>
+	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td></tr>
+	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td></tr>
+	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>Yes</td></tr>
+	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td></tr>
+	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td></tr>
 </tbody>
 </table>
 
@@ -15538,7 +15502,7 @@ Sex      Heavy Never Occas Regul
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Delete Adult2</span>
-<span class="n">data</span> <span class="o">&lt;-</span> <span class="n">data[</span><span class="p">,</span> <span class="m">-10</span><span class="n">]</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">select</span><span class="o">=-</span><span class="nf">c</span><span class="p">(</span><span class="n">Adult2</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -15558,6 +15522,8 @@ Sex      Heavy Never Occas Regul
 </code></pre>
 <p>Can we still use ifelse( )?</p>
 
+<pre><code>cut(x, breaks, labels = NULL, right = TRUE, ...)</code></pre>
+
 </div>
 </div>
 </div>
@@ -15567,45 +15533,10 @@ Sex      Heavy Never Occas Regul
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">cut.points</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="kc">Inf</span><span class="p">)</span>
-<span class="n">data</span><span class="o">$</span><span class="n">Hnd.group</span> <span class="o">&lt;-</span> <span class="nf">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="n">cut.points</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># labels as default</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 6 × 10</caption>
-<thead>
-	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult</th><th scope=col>Hnd.group</th></tr>
-	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td><td>(20,22]</td></tr>
-	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td><td>(18,20]</td></tr>
-	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td><td>(16,18]</td></tr>
-	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>No </td><td>(0,16] </td></tr>
-	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td><td>(18,20]</td></tr>
-	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td><td>(18,20]</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15615,45 +15546,10 @@ Sex      Heavy Never Occas Regul
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">data</span><span class="o">$</span><span class="n">Hnd.group</span> <span class="o">&lt;-</span> <span class="nf">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="n">cut.points</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Set labels to false</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 6 × 10</caption>
-<thead>
-	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult</th><th scope=col>Hnd.group</th></tr>
-	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td><td>4</td></tr>
-	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td><td>3</td></tr>
-	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td><td>2</td></tr>
-	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>No </td><td>1</td></tr>
-	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td><td>3</td></tr>
-	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td><td>3</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15663,46 +15559,11 @@ Sex      Heavy Never Occas Regul
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">groups</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Curry&quot;</span><span class="p">,</span> <span class="s">&quot;Drake&quot;</span><span class="p">,</span> <span class="s">&quot;VanVleet&quot;</span><span class="p">,</span> <span class="s">&quot;Lin&quot;</span><span class="p">,</span> <span class="s">&quot;Leonard&quot;</span><span class="p">)</span>
-<span class="n">data</span><span class="o">$</span><span class="n">Hnd.group</span> <span class="o">&lt;-</span> <span class="nf">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="n">cut.points</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">groups</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Customized labels</span>
+<span class="n">label</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Curry&quot;</span><span class="p">,</span> <span class="s">&quot;Drake&quot;</span><span class="p">,</span> <span class="s">&quot;VanVleet&quot;</span><span class="p">,</span> <span class="s">&quot;Lin&quot;</span><span class="p">,</span> <span class="s">&quot;Leonard&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A data.frame: 6 × 10</caption>
-<thead>
-	<tr><th scope=col>X</th><th scope=col>Sex</th><th scope=col>Wr.Hnd</th><th scope=col>NW.Hnd</th><th scope=col>Pulse</th><th scope=col>Smoke</th><th scope=col>Height</th><th scope=col>Age</th><th scope=col>Adult</th><th scope=col>Hnd.group</th></tr>
-	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>1</td><td>Male  </td><td>21.4</td><td>21.0</td><td>63</td><td>Never</td><td>180.00</td><td>19.000</td><td>Yes</td><td>Lin     </td></tr>
-	<tr><td>2</td><td>Male  </td><td>19.5</td><td>19.4</td><td>79</td><td>Never</td><td>165.00</td><td>18.083</td><td>Yes</td><td>VanVleet</td></tr>
-	<tr><td>3</td><td>Female</td><td>16.3</td><td>16.2</td><td>44</td><td>Regul</td><td>152.40</td><td>23.500</td><td>Yes</td><td>Drake   </td></tr>
-	<tr><td>4</td><td>Female</td><td>15.9</td><td>16.5</td><td>99</td><td>Never</td><td>167.64</td><td>17.333</td><td>No </td><td>Curry   </td></tr>
-	<tr><td>5</td><td>Male  </td><td>19.3</td><td>19.4</td><td>55</td><td>Never</td><td>180.34</td><td>19.833</td><td>Yes</td><td>VanVleet</td></tr>
-	<tr><td>6</td><td>Male  </td><td>18.5</td><td>18.5</td><td>48</td><td>Never</td><td>167.00</td><td>22.333</td><td>Yes</td><td>VanVleet</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15732,7 +15593,8 @@ Sex      Heavy Never Occas Regul
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="e2.-Calcuate-the-mean-Wr.Hnd-span-of-each-Hnd.group-without-using-aggregate,-by,-tapply">e2. Calcuate the mean Wr.Hnd span of each Hnd.group without using aggregate, by, tapply<a class="anchor-link" href="#e2.-Calcuate-the-mean-Wr.Hnd-span-of-each-Hnd.group-without-using-aggregate,-by,-tapply">&#182;</a></h4>
 <pre><code>    split(x, f, ...)
-    lapply(X, FUN, ...)</code></pre>
+    lapply(X, FUN, ...)
+    sapply(X, FUN, ..., simplify = TRUE)</code></pre>
 
 </div>
 </div>
@@ -15743,166 +15605,9 @@ Sex      Heavy Never Occas Regul
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">cut.points</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">16</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="kc">Inf</span><span class="p">)</span>
-<span class="n">grps</span> <span class="o">&lt;-</span> <span class="nf">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="n">cut.points</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">groups</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">Wr.Hnd.grp</span> <span class="o">&lt;-</span> <span class="nf">split</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Wr.Hnd</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">grps</span><span class="p">)</span>
-<span class="n">Wr.Hnd.grp</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">Wr.Hnd.grp</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<dl>
-	<dt>$Curry</dt>
-		<dd><ol class=list-inline>
-	<li>15.9</li>
-	<li>13</li>
-	<li>16</li>
-	<li>13</li>
-	<li>14</li>
-	<li>16</li>
-	<li>15.5</li>
-	<li>15.4</li>
-	<li>15</li>
-	<li>16</li>
-</ol>
-</dd>
-	<dt>$Drake</dt>
-		<dd><ol class=list-inline>
-	<li>16.3</li>
-	<li>17.5</li>
-	<li>17.5</li>
-	<li>18</li>
-	<li>17.5</li>
-	<li>16.4</li>
-	<li>17.2</li>
-	<li>17</li>
-	<li>17.8</li>
-	<li>18</li>
-	<li>18</li>
-	<li>17</li>
-	<li>16.9</li>
-	<li>16.5</li>
-	<li>17</li>
-	<li>17.6</li>
-	<li>16.5</li>
-	<li>17.5</li>
-	<li>17.7</li>
-	<li>17.1</li>
-	<li>18</li>
-	<li>17.6</li>
-	<li>17.5</li>
-	<li>17.7</li>
-	<li>17.5</li>
-	<li>17.5</li>
-	<li>18</li>
-	<li>18</li>
-	<li>16.5</li>
-	<li>17.5</li>
-	<li>17.5</li>
-	<li>17.6</li>
-	<li>17</li>
-	<li>18</li>
-</ol>
-</dd>
-	<dt>$VanVleet</dt>
-		<dd><ol class=list-inline>
-	<li>19.5</li>
-	<li>19.3</li>
-	<li>18.5</li>
-	<li>19.8</li>
-	<li>18.5</li>
-	<li>20</li>
-	<li>18.6</li>
-	<li>18.5</li>
-	<li>19.1</li>
-	<li>19.6</li>
-	<li>19.5</li>
-	<li>19.5</li>
-	<li>18.9</li>
-	<li>18.1</li>
-	<li>19.7</li>
-	<li>18.8</li>
-	<li>19.5</li>
-	<li>18.5</li>
-	<li>19.4</li>
-	<li>18.5</li>
-	<li>19.1</li>
-	<li>18.8</li>
-	<li>20</li>
-	<li>19</li>
-	<li>19.5</li>
-	<li>19</li>
-	<li>18.9</li>
-	<li>19</li>
-	<li>18.5</li>
-	<li>18.5</li>
-	<li>19.2</li>
-	<li>18.5</li>
-	<li>19</li>
-	<li>18.5</li>
-	<li>19.2</li>
-	<li>19.5</li>
-	<li>18.7</li>
-	<li>18.2</li>
-	<li>19.5</li>
-	<li>19</li>
-	<li>19.5</li>
-</ol>
-</dd>
-	<dt>$Lin</dt>
-		<dd><ol class=list-inline>
-	<li>21.4</li>
-	<li>22</li>
-	<li>21</li>
-	<li>21</li>
-	<li>20.5</li>
-	<li>21</li>
-	<li>21.5</li>
-	<li>20.8</li>
-	<li>21.3</li>
-	<li>21.5</li>
-	<li>21</li>
-	<li>20.5</li>
-</ol>
-</dd>
-	<dt>$Leonard</dt>
-		<dd><ol class=list-inline>
-	<li>22.2</li>
-	<li>23.2</li>
-	<li>22.5</li>
-</ol>
-</dd>
-</dl>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-'list'
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15912,62 +15617,10 @@ Sex      Heavy Never Occas Regul
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">la</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Wr.Hnd.grp</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">summary</span><span class="p">);</span> <span class="n">la</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">la</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># lapply</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>$Curry
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  13.00   14.25   15.45   14.98   15.97   16.00 
-
-$Drake
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  16.30   17.00   17.50   17.38   17.70   18.00 
-
-$VanVleet
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  18.10   18.50   19.00   19.05   19.50   20.00 
-
-$Lin
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  20.50   20.95   21.00   21.12   21.43   22.00 
-
-$Leonard
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  22.20   22.35   22.50   22.63   22.85   23.20 
-</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-'list'
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15977,57 +15630,11 @@ $Leonard
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">sa</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">Wr.Hnd.grp</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">summary</span><span class="p">,</span> <span class="n">simplify</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">);</span> <span class="n">sa</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">sa</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># sapply</span>
 <span class="c1"># See what simplify does</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A matrix: 6 × 5 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>Curry</th><th scope=col>Drake</th><th scope=col>VanVleet</th><th scope=col>Lin</th><th scope=col>Leonard</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Min.</th><td>13.000</td><td>16.30000</td><td>18.10000</td><td>20.500</td><td>22.20000</td></tr>
-	<tr><th scope=row>1st Qu.</th><td>14.250</td><td>17.00000</td><td>18.50000</td><td>20.950</td><td>22.35000</td></tr>
-	<tr><th scope=row>Median</th><td>15.450</td><td>17.50000</td><td>19.00000</td><td>21.000</td><td>22.50000</td></tr>
-	<tr><th scope=row>Mean</th><td>14.980</td><td>17.37941</td><td>19.04634</td><td>21.125</td><td>22.63333</td></tr>
-	<tr><th scope=row>3rd Qu.</th><td>15.975</td><td>17.70000</td><td>19.50000</td><td>21.425</td><td>22.85000</td></tr>
-	<tr><th scope=row>Max.</th><td>16.000</td><td>18.00000</td><td>20.00000</td><td>22.000</td><td>23.20000</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-'matrix'
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -16037,53 +15644,20 @@ $Leonard
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="c1"># ?vapply</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># vapply *</span>
 <span class="c1"># Safer than sapply(), and a little bit faster</span>
 <span class="c1"># because FUN.VALUE has to be specified that length and type should match</span>
 <span class="c1"># Any idea why it can be a little bit faster? Recall...</span>
-<span class="n">va</span> <span class="o">&lt;-</span> <span class="nf">vapply</span><span class="p">(</span><span class="n">Wr.Hnd.grp</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">FUN.VALUE</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Min.&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
-                                                <span class="s">&quot;1st Qu.&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
-                                                <span class="s">&quot;Median&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
-                                                <span class="s">&quot;lalalalala&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
-                                                <span class="s">&quot;3rd Qu.&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">),</span>
-                                                <span class="s">&quot;Max.&quot;</span> <span class="o">=</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">1</span><span class="p">)))</span>
-<span class="n">va</span>
+<span class="c1"># va &lt;- vapply(Wr.Hnd.grp, summary, FUN.VALUE = c(&quot;Min.&quot; = numeric(1),</span>
+<span class="c1">#                                                 &quot;1st Qu.&quot; = numeric(1),</span>
+<span class="c1">#                                                 &quot;Median&quot; = numeric(1),</span>
+<span class="c1">#                                                 &quot;lalalalala&quot; = numeric(1),</span>
+<span class="c1">#                                                 &quot;3rd Qu.&quot; = numeric(1),</span>
+<span class="c1">#                                                 &quot;Max.&quot; = numeric(1)))</span>
+<span class="c1"># va</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<table>
-<caption>A matrix: 6 × 5 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>Curry</th><th scope=col>Drake</th><th scope=col>VanVleet</th><th scope=col>Lin</th><th scope=col>Leonard</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>Min.</th><td>13.000</td><td>16.30000</td><td>18.10000</td><td>20.500</td><td>22.20000</td></tr>
-	<tr><th scope=row>1st Qu.</th><td>14.250</td><td>17.00000</td><td>18.50000</td><td>20.950</td><td>22.35000</td></tr>
-	<tr><th scope=row>Median</th><td>15.450</td><td>17.50000</td><td>19.00000</td><td>21.000</td><td>22.50000</td></tr>
-	<tr><th scope=row>lalalalala</th><td>14.980</td><td>17.37941</td><td>19.04634</td><td>21.125</td><td>22.63333</td></tr>
-	<tr><th scope=row>3rd Qu.</th><td>15.975</td><td>17.70000</td><td>19.50000</td><td>21.425</td><td>22.85000</td></tr>
-	<tr><th scope=row>Max.</th><td>16.000</td><td>18.00000</td><td>20.00000</td><td>22.000</td><td>23.20000</td></tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -16275,39 +15849,26 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code> floor( ) takes a single numeric argument x and returns a numeric vector containing the largest integers not greater than the corresponding elements of x.</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="n">int.div</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">int</span> <span class="o">&lt;-</span> <span class="nf">floor</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
-    <span class="n">mod</span> <span class="o">&lt;-</span> <span class="n">a</span> <span class="o">-</span> <span class="n">int</span> <span class="o">*</span> <span class="n">b</span>
-    <span class="nf">return</span><span class="p">(</span><span class="nf">cat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;%%&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s">&quot;: integer =&quot;</span><span class="p">,</span> <span class="n">int</span><span class="p">,</span> <span class="s">&quot;modulus =&quot;</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">))</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">int.div</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(){</span>
+    
 <span class="p">}</span>
-
-<span class="nf">int.div</span><span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>9 %% 2 : integer = 4 modulus = 1 
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -16317,92 +15878,11 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="c1"># We can incorporate basically anything in functions, say a loop</span>
-<span class="n">int.div.loop</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">a</span> <span class="o">&lt;-</span> <span class="n">numerator</span>
-    <span class="n">b</span> <span class="o">&lt;-</span> <span class="n">denominator</span>
-    <span class="n">i</span> <span class="o">&lt;-</span> <span class="m">0</span>
-    <span class="nf">while </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">a</span>  <span class="o">&lt;-</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-        <span class="n">i</span> <span class="o">&lt;-</span> <span class="n">i</span> <span class="o">+</span> <span class="m">1</span>
-    <span class="p">}</span>
-    <span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">integer</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">modulus</span> <span class="o">=</span> <span class="n">a</span><span class="p">))</span>
-<span class="p">}</span>
-<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">int.div.loop</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="n">numerator</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
-<span class="n">result</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># class(result)</span>
+<span class="c1"># Recall: how do we access the modulus?</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-<dl>
-	<dt>$integer</dt>
-		<dd>3</dd>
-	<dt>$modulus</dt>
-		<dd>0</dd>
-</dl>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="n">result</span><span class="o">$</span><span class="n">modulus</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-'list'
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-0
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -16416,7 +15896,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># No need to worry about the details here.</span>
@@ -16434,7 +15914,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Train my chatbot - AlphaGo style.</span>
@@ -16470,7 +15950,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">data_summary</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="p">{</span>
@@ -16528,7 +16008,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># sample.mean &lt;- NULL</span>
@@ -16594,7 +16074,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">parallel</span><span class="p">)</span>
@@ -16627,7 +16107,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">mat.list</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">250</span><span class="p">,</span> <span class="m">1800</span><span class="p">,</span> <span class="m">2000</span><span class="p">),</span> <span class="n">diag</span><span class="p">)</span>
@@ -16692,7 +16172,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">system.time</span><span class="p">(</span>
@@ -16717,7 +16197,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  3.108   0.092   3.259 </pre>
+  2.919   0.054   2.978 </pre>
 </div>
 
 </div>
@@ -16728,7 +16208,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">system.time</span><span class="p">(</span>
@@ -16753,7 +16233,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  1.460   0.207   2.224 </pre>
+  1.292   0.167   1.861 </pre>
 </div>
 
 </div>
@@ -16764,7 +16244,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">system.time</span><span class="p">(</span>
@@ -16789,7 +16269,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  1.931   0.290   3.314 </pre>
+  1.291   0.195   1.878 </pre>
 </div>
 
 </div>
@@ -16800,7 +16280,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">t</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
@@ -16827,7 +16307,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.572   0.161   7.283 </pre>
+  0.386   0.090   4.197 </pre>
 </div>
 
 </div>
@@ -16838,7 +16318,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">t</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
@@ -16865,7 +16345,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.571   0.134   5.110 </pre>
+  0.499   0.121   3.490 </pre>
 </div>
 
 </div>
@@ -16876,7 +16356,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Two parallel calls within one cluster.</span>
@@ -16886,6 +16366,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <span class="n">pl_lb</span> <span class="o">&lt;-</span> <span class="nf">parLapplyLB</span><span class="p">(</span><span class="n">cl</span> <span class="o">=</span> <span class="n">cl</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">mat.list</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">solve</span><span class="p">)</span>
 <span class="nf">stopCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 <span class="nf">proc.time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t</span>
+<span class="c1"># This takes shorter than the sum of the previous two. Why?</span>
 </pre></div>
 
     </div>
@@ -16905,7 +16386,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  1.076   0.230  11.195 </pre>
+  0.868   0.154   7.513 </pre>
 </div>
 
 </div>
@@ -16923,7 +16404,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">t</span> <span class="o">&lt;-</span> <span class="nf">proc.time</span><span class="p">()</span>
@@ -16949,7 +16430,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 
 <div class="output_text output_subarea ">
 <pre>   user  system elapsed 
-  0.011   0.010   1.119 </pre>
+  0.010   0.006   0.720 </pre>
 </div>
 
 </div>
@@ -17025,7 +16506,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">Rcpp</span><span class="p">)</span>
@@ -17081,7 +16562,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">sourceCpp</span><span class="p">(</span><span class="s">&quot;mm_cpp.cpp&quot;</span><span class="p">)</span>
@@ -17094,7 +16575,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Now we can call the function using the name defined in the .cpp file</span>
@@ -17148,7 +16629,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">bchmk</span> <span class="o">&lt;-</span> <span class="nf">microbenchmark</span><span class="p">(</span><span class="n">a</span> <span class="o">%*%</span> <span class="n">b</span><span class="p">,</span>
@@ -17180,8 +16661,8 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>a %*% b      </td><td>743.611</td><td>745.8515</td><td>771.8628</td><td>746.928</td><td>757.1930</td><td>1249.080</td><td>100</td></tr>
-	<tr><td>mat_mul(a, b)</td><td>587.565</td><td>588.9435</td><td>620.7389</td><td>590.887</td><td>598.1225</td><td>1948.189</td><td>100</td></tr>
+	<tr><td>a %*% b      </td><td>738.83</td><td>743.7275</td><td>775.0459</td><td>754.637</td><td>786.785</td><td> 973.247</td><td>100</td></tr>
+	<tr><td>mat_mul(a, b)</td><td>586.69</td><td>588.0115</td><td>614.3580</td><td>590.760</td><td>614.089</td><td>1637.623</td><td>100</td></tr>
 </tbody>
 </table>
 
@@ -17195,7 +16676,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Here we make an R function that calls the C++ function</span>
@@ -17239,7 +16720,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Another way to do this. Here you do not need to have a separate .cpp file.</span>
@@ -17259,7 +16740,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">mm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -17299,7 +16780,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># We can wrap this naive function in an R function to manipulate input and output in R</span>
@@ -17402,7 +16883,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">20190813</span><span class="p">)</span>
@@ -17472,13 +16953,47 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-r"><pre><span></span><span class="nf">dyn.load</span><span class="p">(</span><span class="s">&quot;mm_for.so&quot;</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Load the executable .so file (MacOS) or .dll file (Windows)</span>
+<span class="nf">dyn.load</span><span class="p">(</span><span class="s">&quot;mm_for.so&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Check whether the &quot;mat_mul_for&quot; function is loaded into R</span>
+<span class="nf">is.loaded</span><span class="p">(</span><span class="s">&quot;mat_mul_for&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+TRUE
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -17594,7 +17109,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="We-can-wrap-it-up-in-an-R-function-as-well.">We can wrap it up in an R function as well.<a class="anchor-link" href="#We-can-wrap-it-up-in-an-R-function-as-well.">&#182;</a></h4>
+<h4 id="We-can-wrap-it-in-an-R-function-as-well.">We can wrap it in an R function as well.<a class="anchor-link" href="#We-can-wrap-it-in-an-R-function-as-well.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -17740,8 +17255,11 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='4'></a></p>
 <h2 id="4.-Exercises">4. <a href="#0">Exercises</a><a class="anchor-link" href="#4.-Exercises">&#182;</a></h2><p>Make a function in R using R and/or Rcpp and/or R call Fortran that does</p>
-<p><strong>Level 1</strong> Element-wise integer division for two vectors</p>
+<p><strong>Level 1</strong> Integer division of two integers using a loop</p>
 
+<pre><code>    I have 9 dollars to buy donuts for my colleagues. The donuts are 2 dollars each.
+</code></pre>
+$$ 9&gt;2 \rightarrow 9-2 = 7\quad \mathrm{1\, donut} $$$$ 7&gt;2 \rightarrow 7-2 = 5\quad \mathrm{2\, donuts}  $$$$ 5&gt;2 \rightarrow 5-2 = 3\quad \mathrm{3\, donuts}  $$$$ 3&gt;2 \rightarrow 3-2 = 1\quad \mathrm{4\, donuts}  $$$$ 1&lt;2 \rightarrow \mathrm{stop} $$
 </div>
 </div>
 </div>
@@ -17751,6 +17269,60 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Something like this.</span>
+<span class="m">9</span> <span class="o">%/%</span> <span class="m">2</span><span class="p">;</span> <span class="m">9</span><span class="o">%%</span><span class="m">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+4
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+1
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Level 2</strong> Element-wise integer division for two integer vectors</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Something like this.</span>
+<span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">12</span><span class="p">)</span> <span class="o">%/%</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">12</span><span class="p">)</span> <span class="o">%%</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 </pre></div>
 
@@ -17761,6 +17333,24 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<ol class=list-inline>
+	<li>2</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ol>
+
+</div>
+
+</div>
 
 <div class="output_area">
 
@@ -17795,7 +17385,7 @@ $$ CI = \bar{x} \pm t_{n-1, 0.025} \times \sqrt{\frac{s^2}{n}} $$<p>where $\bar{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Level 2</strong> Linear regression</p>
+<p><strong>Level 3</strong> Linear regression</p>
 <p>The formula for the point estimates is
 $$ \boldsymbol{\beta} = (\boldsymbol{X}^\top \boldsymbol{X})^{-1} \boldsymbol{X}^\top \boldsymbol{Y} $$</p>
 <ul>
@@ -17809,7 +17399,7 @@ $$ \boldsymbol{\beta} = (\boldsymbol{X}^\top \boldsymbol{X})^{-1} \boldsymbol{X}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># If you enter the right X and Y in your function, you should get the following result</span>
@@ -17851,7 +17441,7 @@ Coefficients:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Level 3</strong> Gradient descent to calculate the minimum value of a given function, with user-supplied gradient function.</p>
+<p><strong>Level 4</strong> Gradient descent to calculate the minimum value of a given function, with user-supplied gradient function.</p>
 <ul>
 <li>Gradient descent is an iterative algorithm therefore we have to use loops. Here we can really see the speed advantage of C++ and Fortran over R.</li>
 </ul>
@@ -17861,7 +17451,7 @@ Coefficients:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="c1"># Something like this, both inputs are R functions.</span>
@@ -17878,7 +17468,7 @@ Coefficients:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Level 4</strong> Specific task in your own research.</p>
+<p><strong>Level 5</strong> Specific task in your own research.</p>
 
 </div>
 </div>
