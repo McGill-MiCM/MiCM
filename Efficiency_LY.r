@@ -57,7 +57,7 @@ mylist <- list(Title = "Efficient Coding and Computing",
                Duration = c(3, 3),
                sections = as.factor(c(1, 2, 3, 4)),
                Date = as.Date("2019-08-13"),
-               Lunch_provided = FALSE,
+               Lunch_provided = TRUE,
                Feedbacks = c("Amazing!", "Great workshop!", "Yi is the best!", "Wow!")
 )
 print(mylist) # No need for print if running in R or Rstudio
@@ -145,52 +145,87 @@ head(data, 10)
 
 summary(data)
 
+mean(data$Wr.Hnd)
 
+mean(data$Height)
+?mean
 
-
-
-
+mean(data$Height, na.rm = TRUE)
 
 cts.var <- sapply(X = data, FUN = is.double) # We'll talk about sapply later.
 cts <- data[ , cts.var]
 head(cts)
+?apply
 
+apply(X = cts, MARGIN = 2, FUN = mean)
 
+apply(X = cts, MARGIN = 2, FUN = mean, na.rm = T)
 
+fm <- table(data$Sex)
+fm
 
+class(fm)
 
+fm/length(data$Sex)
 
+prop.table(fm)
 
+table(data$Smoke)
 
+table(data$Smoke, data$Sex)
 
+table(data[, c("Smoke", "Sex")])
 
+table <- aggregate(x = data$Wr.Hnd, by = list(Sex = data$Sex), FUN = sd)
+table
+# table[table$Sex == "Female",]
 
+aggregate(Wr.Hnd~Sex, FUN = sd, data = data)
 
+by(data = data$Wr.Hnd, INDICES = list(Sex = data$Sex), FUN = sd)
 
-
-
-
-
-
-
-
+table1 <- tapply(X = data$Wr.Hnd,
+                 INDEX = list(Sex = data$Sex),
+                 FUN = sd,
+                 simplify = T)
+# tapply(X = data$Wr.Hnd, INDEX = list(Sex = data$Sex), FUN = sd)["Female"]
+table1
+str(table1)
 
 # Return a list using tapply()
+table2 <- tapply(X = data$Wr.Hnd,
+                 INDEX = list(Sex = data$Sex),
+                 FUN = sd,
+                 simplify = F)
+table2
+str(table2)
 
+aggregate(x = data$Wr.Hnd,
+          by = list(Sex = data$Sex, Smoke = data$Smoke),
+          FUN = sd)
 
+aggregate(Wr.Hnd~Sex + Smoke, data = data, FUN = sd)
 
+aggregate(cbind(Wr.Hnd, NW.Hnd) ~ Sex + Smoke, data = data, FUN = sd)
 
+name <- aggregate(x = cbind(data$Wr.Hnd, data$NW.Hnd),
+          by = list(Sex = data$Sex, Smoke = data$Smoke),
+          FUN = sd)
+name
 
+aggregate(Wr.Hnd~Sex+Smoke, data = data, FUN = print)
 
+aggregate(Wr.Hnd~Sex+Smoke, data = data, FUN = length)
 
+aggregate(Wr.Hnd~Sex+Smoke, data = data, FUN = hist)
 
+vec <- 1:5
+vec
 
-
-
-
+ifelse(vec>3, yes = "big", no = "small")
 
 adult <- 18
-
+data$Adult <- ifelse(data$Age>=18, "Yes", "No")
 head(data)
 
 if (data$Age >= 18) {
@@ -204,44 +239,67 @@ head(data)
 data <- subset(data, select=-c(Adult2))
 
 cut.points <- c(0, 16, 18, 20, 22, Inf)
+data$Hnd.group <- cut(data$Wr.Hnd, breaks = cut.points, right = TRUE)
+head(data)
 # labels as default
 
 # Set labels to false
+data$Hnd.group <- cut(data$Wr.Hnd,
+                      breaks = cut.points,
+                      labels = F, right = TRUE)
+head(data)
 
 # Customized labels
 label <- c("Curry", "Drake", "VanVleet", "Lin", "Leonard")
+data$Hnd.group <- cut(data$Wr.Hnd,
+                      breaks = cut.points,
+                      labels = label, right = TRUE)
+head(data)
 
+aggregate(Wr.Hnd~Hnd.group, data = data, FUN = mean)
 
-
-cut.points <- c(0, 16, 18, 20, 22, Inf)
+# cut.points <- c(0, 16, 18, 20, 22, Inf)
+Wr.Hnd.Grp <- split(data$Wr.Hnd, f = data$Hnd.group)
+Wr.Hnd.Grp
 
 # lapply
+la <- lapply(Wr.Hnd.Grp, FUN = summary)
+la
+class(la)
 
 # sapply
+sa <- sapply(X = Wr.Hnd.Grp, FUN = summary, simplify = T)
+sa
+class(sa)
 # See what simplify does
+
+sa <- sapply(X = Wr.Hnd.Grp, FUN = summary, simplify = F)
+sa
+class(sa)
 
 # vapply *
 # Safer than sapply(), and a little bit faster
 # because FUN.VALUE has to be specified that length and type should match
 # Any idea why it can be a little bit faster? Recall...
-# va <- vapply(Wr.Hnd.grp, summary, FUN.VALUE = c("Min." = numeric(1),
-#                                                 "1st Qu." = numeric(1),
-#                                                 "Median" = numeric(1),
-#                                                 "lalalalala" = numeric(1),
-#                                                 "3rd Qu." = numeric(1),
-#                                                 "Max." = numeric(1)))
-# va
+va <- vapply(Wr.Hnd.Grp, summary, FUN.VALUE = c("Min." = numeric(1),
+                                                "1st Qu." = numeric(1),
+                                                "Median" = numeric(1),
+                                                "Mean" = numeric(1),
+                                                "3rd Qu." = numeric(1),
+                                                "Max." = numeric(1)))
+va
 
 # aggregate(Wr.Hnd~Smoke, data = data, FUN = ...)
 # tapply(X = data$Wr.Hnd, INDEX = list(data$Smoke), FUN = ...)
 
-sample.mean <- NULL
-sample.sd <- NULL
-n <- 10
+sample.mean <- aggregate(Wr.Hnd~Smoke, data = data, FUN = mean)$Wr.Hnd
+sample.sd <- aggregate(Wr.Hnd~Smoke, data = data, FUN = sd)$Wr.Hnd
+n <- aggregate(Wr.Hnd~Smoke, data = data, FUN = length)$Wr.Hnd
 t <- qt(p = 0.025, df = n - 1, lower.tail = FALSE)
+sample.mean; sample.sd; n; t
 lb <- sample.mean - t * sample.sd / sqrt(n)
 ub <- sample.mean + t * sample.sd / sqrt(n)
-
+lb; ub
 # How many times did we aggregate according to the group? Can on aggregate only once?
 
 # The structure
@@ -263,19 +321,37 @@ times2(5)
 9 %/% 2
 9 %% 2
 
-int.div <- function(){
-    
+int.div <- function(a, b){
+    int <- a%/%b
+    mod <- a%%b
+    return(list(integer = int, modulus = mod))
 }
 
 # class(result)
 # Recall: how do we access the modulus?
+result <- int.div(21, 4)
+result$integer
+
+int.div <- function(a, b){
+    int <- a%/%b
+    mod <- a%%b
+    return(cat(a, "%%", b, ": \n integer =", int,"\n ------------------", " \n modulus =", mod, "\n"))
+}
+int.div(21,4)
+
+int.div <- function(a, b){
+    int <- a%/%b
+    mod <- a%%b
+    return(c(a, b))
+}
+int.div(21, 4)
 
 # No need to worry about the details here.
 # Just want to show that functions do not always have to return() something.
 AIcanadian <- function(who, reply_to) {
     system(paste("say -v", who, "Sorry!"))
 }
-# AIcanadian("Alex", "Sorry I stepped on your foot.")
+AIcanadian("Alex", "Sorry I stepped on your foot.")
 
 # Train my chatbot - AlphaGo style.
 # I'll let Alex and Victoria talk to each other.
@@ -298,7 +374,7 @@ data_summary <- function(func) {
     data <- read.csv("https://raw.githubusercontent.com/ly129/MiCM/master/sample.csv", header = TRUE)
     by(data = data$Wr.Hnd, INDICES = list(data$Smoke), FUN = func)
 }
-data_summary(quantile)
+data_summary(mean)
 
 # sample.mean <- NULL
 # sample.sd <- NULL
@@ -308,6 +384,13 @@ data_summary(quantile)
 # ub <- sample.mean + t * sample.sd / sqrt(n)
 
 sample_CI <- function(x) {
+    m <- mean(x)
+    l <- length(x)
+    s <- sd(x)
+    t <- qt(p = .025, df = l - 1, lower.tail = FALSE)
+    lb <- m - t* s / sqrt(l)
+    ub <- m + t * s / sqrt(l)
+    return(c(LowerBound = lb, UpperBound = ub))
 }
 
 aggregate(Wr.Hnd~Smoke, data = data, FUN = sample_CI)
